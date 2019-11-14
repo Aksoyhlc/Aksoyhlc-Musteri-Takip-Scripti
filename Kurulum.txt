@@ -1,0 +1,19 @@
+Aksoyhlc Müşteri Takip Scripti Kurulum İşlemi
+
+Bu script Udemy üzerinde ki "PHP Gelişmiş Script Yapımı | 7 Adet Profesyonel Script Yazma" kursu için hazırlanmıştır.
+Bu scriptin nasıl yapıldığını öğrenmek istiyorsanız aşağıda ki linkten kursu satın alabilirsiniz.
+
+Kurs Linki: https://www.udemy.com/course/php-gelismis-script-yapimi-profesyonel-script-yazma-kursu/
+
+-----------------------------------
+
+Yeni bir tane veritabanı oluşturun ve zip dosyası içerisinde ki SQL dosyasını içe aktarın.
+
+İlk oturum için Mail adresi: aksoyhlc@gmail.com Şifre: 123 bu hesapla oturum açtıktan sonra sol menüde ki profil bölümünden e-posta ve şifrenizi değiştirebilirsiniz.
+
+Herhangi bir sorunda; Skype: Aksoyhlc (önerilen) Mail: aksoyhlc@gmail.com | 27aksoy27@gmail.com | admin@aksoyhlc.net
+Link: https://satis.aksoyhlc.net/iletisim
+
+adreslerinden herhangi biri ile iletişime geçebilirsiniz.
+
+-----Aksoyhlc Müşteri Takip Scripti Kurulum İşlemi-----mi-----

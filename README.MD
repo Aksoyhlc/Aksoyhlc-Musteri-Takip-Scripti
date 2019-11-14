@@ -2,6 +2,11 @@
 
 Direkt İndir: [İndirmek İçin Buraya Tıklayın](https://link.aksoyhlc.net/musteri-direkt)
 
+Bu script Udemy üzerinde ki "PHP Gelişmiş Script Yapımı | 7 Adet Profesyonel Script Yazma" kursu için hazırlanmıştır.
+Bu scriptin nasıl yapıldığını öğrenmek istiyorsanız aşağıda ki linkten kursu satın alabilirsiniz.
+
+Kurs Linki: [Kursa Ulaşmak İçin Buraya Tıklayın](https://www.udemy.com/course/php-gelismis-script-yapimi-profesyonel-script-yazma-kursu/)
+
 1.  Yeni bir tane veritabanı oluşturun ve zip dosyası içerisinde ki SQL dosyasını içe aktarın.
     
 2.  İlk oturum için **Mail adresi**:  [aksoyhlc@gmail.com](mailto:aksoyhlc@gmail.com)  **Şifre**: 123 bu hesapla oturum açtıktan sonra sol menüde ki profil bölümünden e-posta ve şifrenizi değiştirebilirsiniz.

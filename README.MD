@@ -1,6 +1,6 @@
 **Aksoyhlc Müşteri Takip Scripti Kurulum İşlemi**
 
-Direkt İndir: [İndirmek İçin Buraya Tıklayın](https://satis.aksoyhlc.net/urun/aksoyhlc-musteri-takip-scripti)
+Direkt İndir: [İndirmek İçin Buraya Tıklayın](https://link.aksoyhlc.net/musteri-direkt)
 
 1.  Yeni bir tane veritabanı oluşturun ve zip dosyası içerisinde ki SQL dosyasını içe aktarın.
     

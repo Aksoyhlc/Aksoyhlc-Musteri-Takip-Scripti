@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 14 Kas 2019, 13:04:40
+-- Üretim Zamanı: 17 Kas 2019, 15:55:40
 -- Sunucu sürümü: 10.1.38-MariaDB
 -- PHP Sürümü: 7.3.3
 
@@ -59,15 +59,37 @@ CREATE TABLE `kullanicilar` (
   `kul_isim` varchar(200) DEFAULT NULL,
   `kul_mail` varchar(200) DEFAULT NULL,
   `kul_sifre` varchar(100) DEFAULT NULL,
-  `kul_telefon` varchar(100) DEFAULT NULL
+  `kul_telefon` varchar(100) DEFAULT NULL,
+  `kul_yetki` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `kullanicilar`
 --
 
-INSERT INTO `kullanicilar` (`kul_id`, `kul_isim`, `kul_mail`, `kul_sifre`, `kul_telefon`) VALUES
-(1, 'Ökkeş Aksoy', 'aksoyhlc@gmail.com', '202cb962ac59075b964b07152d234b70', '111111');
+INSERT INTO `kullanicilar` (`kul_id`, `kul_isim`, `kul_mail`, `kul_sifre`, `kul_telefon`, `kul_yetki`) VALUES
+(1, 'Ökkeş Aksoy', 'aksoyhlc@gmail.com', '202cb962ac59075b964b07152d234b70', '111111', 1),
+(2, 'Suscipit veniam mod', 'cokuguty@mailinator.net', '202cb962ac59075b964b07152d234b70', 'Maiores nihil quos d', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `mesajlar`
+--
+
+CREATE TABLE `mesajlar` (
+  `mesaj_id` int(11) NOT NULL,
+  `mesaj_gonderen` int(11) DEFAULT NULL,
+  `mesaj_detay` text DEFAULT NULL,
+  `mesaj_eklenme_tarih` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `mesajlar`
+--
+
+INSERT INTO `mesajlar` (`mesaj_id`, `mesaj_gonderen`, `mesaj_detay`, `mesaj_eklenme_tarih`) VALUES
+(1, 1, 'qeqwe', '2019-11-17 16:01:40')
 
 -- --------------------------------------------------------
 
@@ -94,7 +116,13 @@ CREATE TABLE `musteri` (
 
 INSERT INTO `musteri` (`musteri_id`, `musteri_isim`, `musteri_mail`, `musteri_telefon`, `musteri_ulke`, `musteri_sehir`, `musteri_adres`, `musteri_website`, `musteri_meslek`, `musteri_detay`) VALUES
 (13, 'ali veli', 'abc@gmail.com', '1231564987', 'türkiye', 'gaziantep', 'asdasdasd', 'www.aksoyhlc.net', 'öğrenci', ''),
-(14, 'hasan hüsyin', 'asdasd@gmail.com', '123464564', 'türkiye', 'istanbul', 'asdasdasd', 'www.aksoyhlc.net', 'öğretmen', '');
+(14, 'hasan hüsyin', 'asdasd@gmail.com', '123464564', 'türkiye', 'istanbul', 'asdasdasd', 'www.aksoyhlc.net', 'öğretmen', ''),
+(15, 'ali veli', 'abc@gmail.com', '1231564987', 'türkiye', 'gaziantep', 'asdasdasd\r\n', 'www.aksoyhlc.net', 'öğrenci', ''),
+(16, 'hasan hüsyin', 'asdasd@gmail.com', '123464564', 'türkiye', 'istanbul', 'asdasdasd', 'www.aksoyhlc.net', 'öğretmen', ''),
+(17, 'ali veli', 'abc@gmail.com', '1231564987', 'türkiye', 'gazianteps', 'asdasdasd', 'www.aksoyhlc.net', 'öğrenci', ''),
+(18, 'hasan hüsyin', 'asdasd@gmail.com', '123464564', 'türkiye', 'istanbul', 'asdasdasd', 'www.aksoyhlc.net', 'öğretmen', ''),
+(19, 'ali veli', 'abc@gmail.com', '1231564987', 'türkiye', 'gaziantep', 'asdasdasd\r\n', 'www.aksoyhlc.net', 'öğrenci', ''),
+(20, 'hasan hüsyin', 'asdasd@gmail.com', '123464564', 'türkiye', 'istanbul', 'asdasdasd', 'www.aksoyhlc.net', 'öğretmen', '');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -111,6 +139,12 @@ ALTER TABLE `ayarlar`
 --
 ALTER TABLE `kullanicilar`
   ADD PRIMARY KEY (`kul_id`);
+
+--
+-- Tablo için indeksler `mesajlar`
+--
+ALTER TABLE `mesajlar`
+  ADD PRIMARY KEY (`mesaj_id`);
 
 --
 -- Tablo için indeksler `musteri`
@@ -132,13 +166,19 @@ ALTER TABLE `ayarlar`
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `kul_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kul_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `mesajlar`
+--
+ALTER TABLE `mesajlar`
+  MODIFY `mesaj_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `musteri`
 --
 ALTER TABLE `musteri`
-  MODIFY `musteri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `musteri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

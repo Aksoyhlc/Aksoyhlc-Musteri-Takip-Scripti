@@ -71,6 +71,7 @@ if (isset($_POST['oturumacma'])) {
 		$_SESSION['kul_isim'] = $kullanici['kul_isim'];
 		$_SESSION['kul_mail'] = $kullanici['kul_mail'];
 		$_SESSION['kul_id'] = $kullanici['kul_id'];
+		$_SESSION['kul_yetki'] = $kullanici['kul_yetki'];
 		header("location:../index.php?durum=ok");
 	}
 	exit;
@@ -319,8 +320,112 @@ if (isset($_POST['isim-mail-telefon-aktar'])) {
 
 
 
+/********************************************************/
 
 
+if (isset($_POST['kulekle'])) {
+	$sorgu=$db->prepare("INSERT INTO kullanicilar SET 
+		kul_isim=:kul_isim,
+		kul_mail=:kul_mail,
+		kul_telefon=:kul_telefon,
+		kul_sifre=:kul_sifre
+		");
+
+	$sonuc=$sorgu->execute(array(
+		'kul_isim' => $_POST['kul_isim'],
+		'kul_mail' => $_POST['kul_mail'],
+		'kul_telefon' => $_POST['kul_telefon'],
+		'kul_sifre' => md5($_POST['kul_sifre'])
+	));
+
+	if ($sonuc) {
+		header("location:../kullanicilar.php?durum=ok");
+	} else {
+		header("location:../kullanicilar.php?durum=no");
+	}
+
+	exit;
+
+}
+
+
+/********************************************************/
+
+
+if (isset($_POST['kulduzenle'])) {
+	$sorgu=$db->prepare("UPDATE kullanicilar SET 
+		kul_isim=:kul_isim,
+		kul_mail=:kul_mail,
+		kul_telefon=:kul_telefon WHERE kul_id=:kul_id
+		");
+
+	$sonuc=$sorgu->execute(array(
+		'kul_isim' => $_POST['kul_isim'],
+		'kul_mail' => $_POST['kul_mail'],
+		'kul_telefon' => $_POST['kul_telefon'],
+		'kul_id' => $_POST['kul_id']
+	));
+
+	if (strlen($_POST['kul_sifre']!=0)) {
+		$sorgu=$db->prepare("UPDATE kullanicilar SET 
+			kul_sifre=:kul_sifre WHERE 
+			kul_id=:kul_id
+			");
+		$sonuc=$sorgu->execute(array(
+			'kul_sifre' => md5($_POST['kul_sifre']),
+			'kul_id' => $_POST['kul_id']
+		));
+	}
+
+	if ($sonuc) {
+		header("location:../kullanicilar.php?durum=ok");
+	} else {
+		header("location:../kullanicilar.php?durum=no");
+	}
+
+	exit;
+
+}
+
+
+/********************************************************/
+
+
+if (isset($_POST["kulsilme"])) {
+	$sorgu=$db->prepare("DELETE FROM kullanicilar WHERE kul_id={$_POST['kul_id']}");
+	$sonuc=$sorgu->execute();
+
+	if ($sonuc) {
+		header("location:../kullanicilar.php?durum=ok");
+	} else {
+		header("location:../kullanicilar.php?durum=no");
+	}
+
+	exit;
+}
+
+
+
+/********************************************************/
+
+if (isset($_POST['mesajekle'])) {
+	$sorgu=$db->prepare("INSERT INTO mesajlar SET 
+		mesaj_gonderen=:mesaj_gonderen,
+		mesaj_detay=:mesaj_detay
+		");
+
+	$sonuc=$sorgu->execute(array(
+		'mesaj_gonderen' => $_SESSION['kul_id'],
+		'mesaj_detay' => $_POST['mesaj_detay']
+	));
+
+	if ($sonuc) {
+		echo json_encode(array('sonuc' => "ok"));
+	} else {
+		echo json_encode(array('sonuc' => "no"));
+	}
+	exit;
+}
 
 
 

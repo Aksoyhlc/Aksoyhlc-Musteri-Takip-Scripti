@@ -15,7 +15,7 @@ function oturumkontrol($link="login.php"){
 
 function yetkikontrol()
 {
-	if (@$_SESSION['kul_yetki']==1) {
+	if ($_SESSION['kul_yetki']==1) {
 		return TRUE;
 	} else {
 		return FALSE;

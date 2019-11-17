@@ -1,7 +1,7 @@
 <?php 
 require_once 'islemler/baglan.php';
 require_once 'fonksiyonlar.php';
-
+oturumkontrol();
 
 if (isset($_GET['sayi'])) {
 	if ($_GET['sayi']=="son50") {

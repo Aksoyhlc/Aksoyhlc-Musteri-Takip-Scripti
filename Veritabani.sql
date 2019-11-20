@@ -89,7 +89,7 @@ CREATE TABLE `mesajlar` (
 --
 
 INSERT INTO `mesajlar` (`mesaj_id`, `mesaj_gonderen`, `mesaj_detay`, `mesaj_eklenme_tarih`) VALUES
-(1, 1, 'qeqwe', '2019-11-17 16:01:40')
+(1, 1, 'qeqwe', '2019-11-17 16:01:40');
 
 -- --------------------------------------------------------
 

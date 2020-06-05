@@ -264,7 +264,7 @@ if (isset($_POST['musteriyukle'])) {
 			header("location:../musteriler.php?durum=ok");
 		}
 	}
-	exit;
+	
 }
 
 /********************************************************/
